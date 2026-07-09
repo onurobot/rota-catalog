@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rota — Furniture Catalog · Merchandising · Marketing · Design</title>
+<meta name="description" content="Rota Furniture Catalog — ofis koltukları, kanepeler, bar taburesi, depolama ve daha fazlası. Rota merchandising, marketing & design." />
+<link rel="icon" href="assets/rotalogo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f7f2ea; --bg-2:#efe6d7; --surface:#ffffff; --surface-2:#faf6ef;
+  --ink:#241f1b; --muted:#6c6358; --muted-2:#9b9184;
+  --line:rgba(36,31,27,.12); --line-2:rgba(36,31,27,.2);
+  --red:#e30410; --red-ink:#c00510; --red-glow:rgba(227,4,16,.22);
+  --maxw:1300px; --r:16px; --ease:cubic-bezier(.22,.61,.36,1);
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Hanken Grotesk','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px)}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-ink)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--red);display:inline-block}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .4s var(--ease),box-shadow .4s,border-color .4s}
+header.scrolled{background:rgba(247,242,234,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:50px;height:50px}
+.brand .bt b{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.02em;line-height:1;display:block}
+.brand .bt span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:clamp(16px,3vw,32px)}
+.nav-links{display:flex;gap:clamp(16px,2.5vw,30px)}
+.nav-links a{font-size:15px;font-weight:500;color:var(--muted);transition:color .25s}
+.nav-links a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;font-size:13px;font-weight:700}
+.lang button{background:none;border:0;color:var(--muted);padding:7px 13px;cursor:pointer;transition:.25s;font-family:inherit}
+.lang button.active{background:var(--red);color:#fff}
+@media(max-width:800px){.nav-links{display:none}}
+
+/* hero */
+.hero{position:relative;padding-top:clamp(120px,16vh,168px);padding-bottom:clamp(48px,7vh,84px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(900px 520px at 82% 8%,rgba(227,4,16,.07),transparent 60%),
+  radial-gradient(700px 600px at 0% 100%,rgba(180,140,90,.12),transparent 55%)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.7rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.015em;margin-top:20px}
+.hero h1 em{font-style:italic;color:var(--red-ink)}
+.hero p{margin-top:20px;font-size:clamp(1.02rem,1.5vw,1.2rem);color:var(--muted);max-width:46ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;cursor:pointer;transition:.28s var(--ease);border:1px solid transparent;font-family:inherit}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 14px 30px -12px var(--red-glow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 40px -12px var(--red-glow)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
+.hero-stats{display:flex;gap:clamp(22px,4vw,46px);margin-top:40px}
+.hero-stats .n{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:600;line-height:1}
+.hero-stats .l{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600;margin-top:6px}
+.hero-cover{position:relative}
+.hero-cover img{width:100%;border-radius:18px;box-shadow:0 40px 80px -34px rgba(36,31,27,.5);border:1px solid var(--line);cursor:pointer;transition:transform .5s var(--ease)}
+.hero-cover img:hover{transform:translateY(-4px)}
+.hero-cover .tagpill{position:absolute;top:16px;left:16px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 8px 20px -10px rgba(0,0,0,.3)}
+
+/* filter bar */
+.filterbar{position:sticky;top:80px;z-index:40;background:rgba(247,242,234,.9);backdrop-filter:blur(12px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filters{display:flex;gap:10px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none;font-family:inherit;font-size:13.5px;font-weight:600;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.25s}
+.chip:hover{border-color:var(--line-2);color:var(--ink)}
+.chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* products */
+.section{padding:clamp(46px,7vw,84px) 0}
+.cat{scroll-margin-top:150px;margin-bottom:clamp(38px,5vw,62px)}
+.cat:last-child{margin-bottom:0}
+.cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:18px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.cat-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,2.8vw,2.2rem);letter-spacing:-.01em;line-height:1.1}
+.cat-head .cnt{font-size:13px;font-weight:600;color:var(--muted-2);letter-spacing:.04em;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:clamp(12px,1.5vw,20px)}
+.pcard{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(36,31,27,.4);border-color:var(--line-2)}
+.pcard .ph{aspect-ratio:1/1;display:grid;place-items:center;padding:14px;background:
+  radial-gradient(120% 90% at 50% 12%,#ffffff,var(--surface-2))}
+.pcard .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .5s var(--ease)}
+.pcard:hover .ph img{transform:scale(1.05)}
+.pcard .zoom{position:absolute;top:11px;right:11px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.7);backdrop-filter:blur(6px);border:1px solid var(--line);display:grid;place-items:center;opacity:0;transform:scale(.8);transition:.3s var(--ease)}
+.pcard:hover .zoom{opacity:1;transform:none}
+.zoom svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:2}
+.loading{color:var(--muted);font-size:1rem;padding:40px 0;text-align:center}
+
+/* catalog / pdf */
+#catalog{background:linear-gradient(180deg,var(--bg),var(--bg-2) 60%,var(--bg))}
+.cat-lead{max-width:640px;margin-bottom:36px}
+.cat-lead h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.015em;line-height:1.06}
+.cat-lead p{color:var(--muted);margin-top:14px}
+.pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;margin-bottom:34px}
+.pagethumb{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--surface);box-shadow:0 10px 26px -18px rgba(0,0,0,.4);transition:.35s var(--ease)}
+.pagethumb:hover{transform:translateY(-4px);box-shadow:0 22px 40px -20px rgba(0,0,0,.45)}
+.pagethumb img{width:100%;aspect-ratio:1/1.414;object-fit:cover;object-position:top}
+.pagethumb span{position:absolute;bottom:8px;left:8px;background:rgba(36,31,27,.8);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px}
+
+/* audio visual teaser */
+#av{padding:clamp(50px,7vw,90px) 0}
+.av-card{position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(120deg,#241f1b,#3a322b);color:var(--bg);padding:clamp(34px,6vw,64px);border:1px solid rgba(255,255,255,.08)}
+.av-card::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(227,4,16,.35),transparent 65%)}
+.av-card .soon{display:inline-block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#ffb3b7;border:1px solid rgba(255,255,255,.2);padding:6px 13px;border-radius:999px}
+.av-card h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin-top:18px;max-width:16ch}
+.av-card p{color:rgba(247,242,234,.72);margin-top:14px;max-width:48ch;position:relative;z-index:1}
+
+/* contact / footer */
+#contact{background:var(--ink);color:var(--bg)}
+.contact-in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:clamp(52px,7vw,88px) 0}
+@media(max-width:760px){.contact-in{grid-template-columns:1fr;gap:30px}}
+.contact-in h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4vw,3rem);line-height:1.05}
+.contact-in p{color:rgba(247,242,234,.66);margin-top:14px;max-width:40ch}
+.contact-cta{display:flex;flex-direction:column;gap:14px}
+.cline{display:flex;align-items:center;gap:15px;padding:16px 18px;border:1px solid rgba(255,255,255,.12);border-radius:14px;transition:.3s;background:rgba(255,255,255,.02)}
+.cline:hover{border-color:rgba(255,255,255,.28);transform:translateX(4px)}
+.cline .ic{flex:none;width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.06);display:grid;place-items:center}
+.cline .ic svg{width:19px;height:19px;stroke:#ff8f96;fill:none;stroke-width:1.7}
+.cline .lab{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(247,242,234,.5);font-weight:600}
+.cline .val{font-size:1.02rem;font-weight:600;margin-top:1px}
+footer{border-top:1px solid rgba(255,255,255,.1)}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:26px 0;color:rgba(247,242,234,.5);font-size:13px}
+.foot .brand .bt b{color:var(--bg)}.foot .brand .bt span{color:rgba(247,242,234,.5)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(26,22,19,.93);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,54px);opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.lb.open{opacity:1;pointer-events:auto}
+.lb figure{max-width:1080px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px;transform:scale(.97);transition:transform .35s var(--ease)}
+.lb.open figure{transform:none}
+.lb .stage{background:#fff;border-radius:14px;padding:clamp(16px,3vw,34px);width:100%;display:grid;place-items:center}
+.lb img{max-width:100%;max-height:72vh;object-fit:contain}
+.lb figcaption{color:#f4efe7;font-weight:600;font-size:1rem;letter-spacing:.01em}
+.lb-close{position:absolute;top:20px;right:22px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(40,34,30,.6);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.25s}
+.lb-close:hover{background:var(--red);border-color:var(--red)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(40,34,30,.5);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.25s;z-index:2}
+.lb-nav:hover{background:var(--red);border-color:var(--red)}
+.lb-nav.prev{left:clamp(10px,2vw,28px)}.lb-nav.next{right:clamp(10px,2vw,28px)}
+@media(max-width:640px){.lb-nav{width:42px;height:42px;top:auto;bottom:16px;transform:none}.lb-nav.prev{left:30%}.lb-nav.next{right:30%}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/rotalogo.png" alt="Rota" />
+      <span class="bt"><b>ROTA</b><span>Merchandising · Marketing · Design</span></span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#products" data-i18n="nav_products">Ürünler</a>
+        <a href="#catalog" data-i18n="nav_catalog">Katalog</a>
+        <a href="#contact" data-i18n="nav_contact">İletişim</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="tr" class="active">TR</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow" data-i18n="hero_kick">Furniture Catalog · 2025</span>
+      <h1 data-i18n="hero_title">Mekânlara <em>karakter</em> katan mobilyalar.</h1>
+      <p data-i18n="hero_sub">Ofis koltuklarından kanepelere, bar taburesinden depolama çözümlerine — Rota Furniture koleksiyonunu keşfedin.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#products" data-i18n="hero_cta1">Ürünleri Keşfet</a>
+        <a class="btn btn-ghost" href="assets/catalog/Rota-Furniture-Catalog.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          <span data-i18n="hero_cta2">Kataloğu İndir</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="n" id="stat-products">—</div><div class="l" data-i18n="stat_products">Ürün</div></div>
+        <div><div class="n">6</div><div class="l" data-i18n="stat_cats">Kategori</div></div>
+        <div><div class="n">2025</div><div class="l" data-i18n="stat_season">Koleksiyon</div></div>
+      </div>
+    </div>
+    <div class="hero-cover">
+      <span class="tagpill" data-i18n="cover_tag">Furniture Catalog</span>
+      <img src="assets/pages/p1.jpg" alt="Rota Furniture Catalog" id="cover-img" />
+    </div>
+  </div>
+</section>
+
+<div class="filterbar">
+  <div class="wrap"><div class="filters" id="filters"></div></div>
+</div>
+
+<a id="products"></a>
+<section class="section">
+  <div class="wrap">
+    <div id="catalog-root"><div class="loading" data-i18n="loading">Ürünler yükleniyor…</div></div>
+  </div>
+</section>
+
+<a id="catalog"></a>
+<section class="section" id="catalog">
+  <div class="wrap">
+    <div class="cat-lead">
+      <span class="eyebrow" data-i18n="cat_kick">Katalog</span>
+      <h2 data-i18n="cat_title">Tüm koleksiyonu PDF olarak inceleyin</h2>
+      <p data-i18n="cat_desc">Rota Furniture kataloğunun tüm sayfalarını görüntüleyin veya PDF olarak indirin.</p>
+    </div>
+    <div class="pages" id="pages"></div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="assets/catalog/Rota-Furniture-Catalog.pdf" download>
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        <span data-i18n="pdf_download">PDF İndir</span>
+      </a>
+      <a class="btn btn-ghost" href="assets/catalog/Rota-Furniture-Catalog.pdf" target="_blank" rel="noopener" data-i18n="pdf_open">Yeni sekmede aç</a>
+    </div>
+  </div>
+</section>
+
+<section id="av">
+  <div class="wrap">
+    <div class="av-card">
+      <span class="soon" data-i18n="av_soon">Çok Yakında</span>
+      <h2 data-i18n="av_title">Audio &amp; Visual Kataloğu</h2>
+      <p data-i18n="av_desc">Rota'nın ses ve görüntü çözümleri kataloğu yakında burada. Yeni koleksiyon için takipte kalın.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-in">
+    <div>
+      <span class="eyebrow" style="color:#ff8f96" data-i18n="c_kick">İletişim</span>
+      <h2 data-i18n="c_title">Projeniz için Rota ile çalışalım.</h2>
+      <p data-i18n="c_desc">Mobilya, merchandising, marketing ve tasarım çözümleri için bize ulaşın.</p>
+    </div>
+    <div class="contact-cta">
+      <a class="cline" href="https://www.rotagroup.net.tr" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg></span>
+        <div><div class="lab" data-i18n="c_web">Web</div><div class="val">www.rotagroup.net.tr</div></div>
+      </a>
+      <a class="cline" href="assets/catalog/Rota-Furniture-Catalog.pdf" download>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M14 3v5h5M14 3l5 5v11a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg></span>
+        <div><div class="lab" data-i18n="c_cat">Katalog</div><div class="val" data-i18n="c_cat_val">Furniture Catalog — PDF</div></div>
+      </a>
+    </div>
+  </div>
+  <footer><div class="wrap foot">
+    <a class="brand" href="#top"><img src="assets/rotalogo.png" alt="" style="width:34px;height:34px"/><span class="bt"><b>ROTA</b><span>Merchandising · Marketing · Design</span></span></a>
+    <div>© 2025 Rota · <span data-i18n="rights">Tüm hakları saklıdır.</span></div>
+  </div></footer>
+</section>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb-close" id="lb-close" aria-label="Kapat">×</button>
+  <button class="lb-nav prev" id="lb-prev" aria-label="Önceki">‹</button>
+  <button class="lb-nav next" id="lb-next" aria-label="Sonraki">›</button>
+  <figure><div class="stage"><img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></div><figcaption id="lb-cap"></figcaption></figure>
+</div>
+
+<script>
+const I18N={
+ tr:{nav_products:"Ürünler",nav_catalog:"Katalog",nav_contact:"İletişim",
+   hero_kick:"Furniture Catalog · 2025",hero_title:'Mekânlara <em>karakter</em> katan mobilyalar.',
+   hero_sub:"Ofis koltuklarından kanepelere, bar taburesinden depolama çözümlerine — Rota Furniture koleksiyonunu keşfedin.",
+   hero_cta1:"Ürünleri Keşfet",hero_cta2:"Kataloğu İndir",
+   stat_products:"Ürün",stat_cats:"Kategori",stat_season:"Koleksiyon",cover_tag:"Furniture Catalog",
+   loading:"Ürünler yükleniyor…",all:"Tümü",
+   cat_kick:"Katalog",cat_title:"Tüm koleksiyonu PDF olarak inceleyin",
+   cat_desc:"Rota Furniture kataloğunun tüm sayfalarını görüntüleyin veya PDF olarak indirin.",
+   pdf_download:"PDF İndir",pdf_open:"Yeni sekmede aç",
+   av_soon:"Çok Yakında",av_title:"Audio & Visual Kataloğu",
+   av_desc:"Rota'nın ses ve görüntü çözümleri kataloğu yakında burada. Yeni koleksiyon için takipte kalın.",
+   c_kick:"İletişim",c_title:"Projeniz için Rota ile çalışalım.",
+   c_desc:"Mobilya, merchandising, marketing ve tasarım çözümleri için bize ulaşın.",
+   c_web:"Web",c_cat:"Katalog",c_cat_val:"Furniture Catalog — PDF",rights:"Tüm hakları saklıdır.",
+   page:"Sayfa",product:"ürün"},
+ en:{nav_products:"Products",nav_catalog:"Catalog",nav_contact:"Contact",
+   hero_kick:"Furniture Catalog · 2025",hero_title:'Furniture that gives spaces <em>character</em>.',
+   hero_sub:"From office chairs to sofas, bar stools to storage — explore the Rota Furniture collection.",
+   hero_cta1:"Explore Products",hero_cta2:"Download Catalog",
+   stat_products:"Products",stat_cats:"Categories",stat_season:"Collection",cover_tag:"Furniture Catalog",
+   loading:"Loading products…",all:"All",
+   cat_kick:"Catalog",cat_title:"Browse the full collection as PDF",
+   cat_desc:"View every page of the Rota Furniture catalog or download it as a PDF.",
+   pdf_download:"Download PDF",pdf_open:"Open in new tab",
+   av_soon:"Coming Soon",av_title:"Audio & Visual Catalog",
+   av_desc:"Rota's audio and visual solutions catalog is coming here soon. Stay tuned for the new collection.",
+   c_kick:"Contact",c_title:"Let's work with Rota on your project.",
+   c_desc:"Get in touch for furniture, merchandising, marketing and design solutions.",
+   c_web:"Web",c_cat:"Catalog",c_cat_val:"Furniture Catalog — PDF",rights:"All rights reserved.",
+   page:"Page",product:"product"}
+};
+let lang=localStorage.getItem('rota-lang')||'tr';
+let DATA=[], curFilter='all';
+const ZOOM='<span class="zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>';
+
+function t(k){return I18N[lang][k]}
+function catTitle(c){return lang==='tr'?c.tr:c.en}
+
+function buildFilters(){
+  const el=document.getElementById('filters');
+  el.innerHTML='<button class="chip'+(curFilter==='all'?' active':'')+'" data-f="all">'+t('all')+'</button>'+
+    DATA.map(c=>'<button class="chip'+(curFilter===c.id?' active':'')+'" data-f="'+c.id+'">'+catTitle(c)+'</button>').join('');
+}
+function buildSections(){
+  document.getElementById('catalog-root').innerHTML=DATA.map(c=>
+    '<div class="cat" id="cat-'+c.id+'" data-id="'+c.id+'">'+
+      '<div class="cat-head"><h2>'+catTitle(c)+'</h2><span class="cnt">'+c.items.length+' '+t('product')+'</span></div>'+
+      '<div class="grid">'+c.items.map((it,i)=>
+        '<article class="pcard" data-cat="'+c.id+'" data-i="'+i+'"><div class="ph"><img loading="lazy" src="'+it.img+'" alt="'+catTitle(c)+'"></div>'+ZOOM+'</article>'
+      ).join('')+'</div></div>').join('');
+}
+function buildPages(){
+  const el=document.getElementById('pages'); let h='';
+  for(let n=1;n<=7;n++) h+='<div class="pagethumb" data-page="'+n+'"><img loading="lazy" src="assets/pages/p'+n+'.jpg" alt="'+t('page')+' '+n+'"><span>'+t('page')+' '+n+'</span></div>';
+  el.innerHTML=h;
+}
+function applyFilter(){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.f===curFilter));
+  document.querySelectorAll('.cat').forEach(s=>s.style.display=(curFilter==='all'||s.dataset.id===curFilter)?'':'none');
+}
+function applyLang(){
+  document.documentElement.lang=lang; const d=I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(e=>{if(d[e.dataset.i18n]!=null)e.innerHTML=d[e.dataset.i18n]});
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  if(DATA.length){buildFilters();buildSections();buildPages();applyFilter();}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem('rota-lang',lang);applyLang()}));
+
+/* delegated clicks */
+document.addEventListener('click',e=>{
+  const chip=e.target.closest('.chip');
+  if(chip){curFilter=chip.dataset.f;applyFilter();document.getElementById('products').scrollIntoView({behavior:'smooth'});return;}
+  const card=e.target.closest('.pcard');
+  if(card){openProduct(card.dataset.cat,+card.dataset.i);return;}
+  const pt=e.target.closest('.pagethumb');
+  if(pt){openPages(+pt.dataset.page-1);return;}
+});
+document.getElementById('cover-img').addEventListener('click',()=>openPages(0));
+
+/* lightbox */
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap');
+let list=[],idx=0;
+function show(){const it=list[idx];lbImg.src=it.src;lbImg.alt=it.cap;lbCap.textContent=it.cap}
+function open(){lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function openProduct(cid,i){const c=DATA.find(x=>x.id===cid);list=c.items.map((it,k)=>({src:it.img,cap:catTitle(c)+' · '+(k+1)}));idx=i;show();open()}
+function openPages(i){list=[];for(let n=1;n<=7;n++)list.push({src:'assets/pages/p'+n+'.jpg',cap:t('page')+' '+n});idx=i;show();open()}
+function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function nav(d){idx=(idx+d+list.length)%list.length;show()}
+document.getElementById('lb-close').onclick=close;
+document.getElementById('lb-prev').onclick=e=>{e.stopPropagation();nav(-1)};
+document.getElementById('lb-next').onclick=e=>{e.stopPropagation();nav(1)};
+lb.addEventListener('click',e=>{if(e.target===lb)close()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')nav(-1);else if(e.key==='ArrowRight')nav(1)});
+
+/* nav scroll */
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>30),{passive:true});
+
+/* load */
+fetch('assets/products.json').then(r=>r.json()).then(d=>{
+  DATA=d;
+  document.getElementById('stat-products').textContent=d.reduce((s,c)=>s+c.items.length,0)+'+';
+  buildFilters();buildSections();buildPages();applyFilter();applyLang();
+}).catch(()=>{document.getElementById('catalog-root').innerHTML='<div class="loading">Katalog yüklenemedi / Failed to load.</div>'});
+applyLang();
+</script>
+</body>
+</html>

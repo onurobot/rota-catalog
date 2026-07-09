@@ -1,0 +1,520 @@
+[
+ {
+  "id": "masa-tabure",
+  "tr": "Bar Taburesi & Çalışma Masaları",
+  "en": "Bar Stools & Workstations",
+  "page": 2,
+  "items": [
+   {
+    "img": "assets/products/masa-tabure-01.jpg",
+    "w": 278,
+    "h": 439
+   },
+   {
+    "img": "assets/products/masa-tabure-02.jpg",
+    "w": 259,
+    "h": 474
+   },
+   {
+    "img": "assets/products/masa-tabure-03.jpg",
+    "w": 406,
+    "h": 256
+   },
+   {
+    "img": "assets/products/masa-tabure-04.jpg",
+    "w": 436,
+    "h": 280
+   },
+   {
+    "img": "assets/products/masa-tabure-05.jpg",
+    "w": 767,
+    "h": 495
+   }
+  ]
+ },
+ {
+  "id": "kanepe-bekleme",
+  "tr": "Kanepe, Bekleme & Sandalye",
+  "en": "Sofas, Waiting & Chairs",
+  "page": 3,
+  "items": [
+   {
+    "img": "assets/products/kanepe-bekleme-01.jpg",
+    "w": 345,
+    "h": 203
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-02.jpg",
+    "w": 217,
+    "h": 141
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-03.jpg",
+    "w": 258,
+    "h": 152
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-04.jpg",
+    "w": 231,
+    "h": 132
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-05.jpg",
+    "w": 159,
+    "h": 117
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-06.jpg",
+    "w": 231,
+    "h": 123
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-07.jpg",
+    "w": 186,
+    "h": 175
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-08.jpg",
+    "w": 220,
+    "h": 236
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-09.jpg",
+    "w": 278,
+    "h": 145
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-10.jpg",
+    "w": 239,
+    "h": 228
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-11.jpg",
+    "w": 255,
+    "h": 269
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-12.jpg",
+    "w": 297,
+    "h": 204
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-13.jpg",
+    "w": 167,
+    "h": 181
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-14.jpg",
+    "w": 250,
+    "h": 205
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-15.jpg",
+    "w": 303,
+    "h": 154
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-16.jpg",
+    "w": 298,
+    "h": 243
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-17.jpg",
+    "w": 225,
+    "h": 238
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-18.jpg",
+    "w": 309,
+    "h": 404
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-19.jpg",
+    "w": 278,
+    "h": 224
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-20.jpg",
+    "w": 300,
+    "h": 205
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-21.jpg",
+    "w": 252,
+    "h": 203
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-22.jpg",
+    "w": 236,
+    "h": 182
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-23.jpg",
+    "w": 279,
+    "h": 176
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-24.jpg",
+    "w": 282,
+    "h": 353
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-25.jpg",
+    "w": 275,
+    "h": 324
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-26.jpg",
+    "w": 263,
+    "h": 412
+   },
+   {
+    "img": "assets/products/kanepe-bekleme-27.jpg",
+    "w": 266,
+    "h": 406
+   }
+  ]
+ },
+ {
+  "id": "ofis-koltuk",
+  "tr": "Ofis Koltukları",
+  "en": "Office Chairs",
+  "page": 4,
+  "items": [
+   {
+    "img": "assets/products/ofis-koltuk-01.jpg",
+    "w": 139,
+    "h": 226
+   },
+   {
+    "img": "assets/products/ofis-koltuk-02.jpg",
+    "w": 327,
+    "h": 254
+   },
+   {
+    "img": "assets/products/ofis-koltuk-03.jpg",
+    "w": 302,
+    "h": 248
+   },
+   {
+    "img": "assets/products/ofis-koltuk-04.jpg",
+    "w": 302,
+    "h": 240
+   },
+   {
+    "img": "assets/products/ofis-koltuk-05.jpg",
+    "w": 329,
+    "h": 269
+   },
+   {
+    "img": "assets/products/ofis-koltuk-06.jpg",
+    "w": 324,
+    "h": 262
+   },
+   {
+    "img": "assets/products/ofis-koltuk-07.jpg",
+    "w": 309,
+    "h": 248
+   },
+   {
+    "img": "assets/products/ofis-koltuk-08.jpg",
+    "w": 308,
+    "h": 237
+   },
+   {
+    "img": "assets/products/ofis-koltuk-09.jpg",
+    "w": 330,
+    "h": 215
+   },
+   {
+    "img": "assets/products/ofis-koltuk-10.jpg",
+    "w": 323,
+    "h": 247
+   },
+   {
+    "img": "assets/products/ofis-koltuk-11.jpg",
+    "w": 326,
+    "h": 226
+   },
+   {
+    "img": "assets/products/ofis-koltuk-12.jpg",
+    "w": 320,
+    "h": 264
+   },
+   {
+    "img": "assets/products/ofis-koltuk-13.jpg",
+    "w": 326,
+    "h": 236
+   },
+   {
+    "img": "assets/products/ofis-koltuk-14.jpg",
+    "w": 314,
+    "h": 220
+   },
+   {
+    "img": "assets/products/ofis-koltuk-15.jpg",
+    "w": 316,
+    "h": 231
+   },
+   {
+    "img": "assets/products/ofis-koltuk-16.jpg",
+    "w": 117,
+    "h": 183
+   },
+   {
+    "img": "assets/products/ofis-koltuk-17.jpg",
+    "w": 117,
+    "h": 185
+   }
+  ]
+ },
+ {
+  "id": "depolama-masa",
+  "tr": "Depolama & Masalar",
+  "en": "Storage & Tables",
+  "page": 5,
+  "items": [
+   {
+    "img": "assets/products/depolama-masa-01.jpg",
+    "w": 143,
+    "h": 272
+   },
+   {
+    "img": "assets/products/depolama-masa-02.jpg",
+    "w": 89,
+    "h": 219
+   },
+   {
+    "img": "assets/products/depolama-masa-03.jpg",
+    "w": 130,
+    "h": 228
+   },
+   {
+    "img": "assets/products/depolama-masa-04.jpg",
+    "w": 76,
+    "h": 177
+   },
+   {
+    "img": "assets/products/depolama-masa-05.jpg",
+    "w": 127,
+    "h": 177
+   },
+   {
+    "img": "assets/products/depolama-masa-06.jpg",
+    "w": 92,
+    "h": 272
+   },
+   {
+    "img": "assets/products/depolama-masa-07.jpg",
+    "w": 139,
+    "h": 219
+   },
+   {
+    "img": "assets/products/depolama-masa-08.jpg",
+    "w": 124,
+    "h": 142
+   },
+   {
+    "img": "assets/products/depolama-masa-09.jpg",
+    "w": 171,
+    "h": 344
+   },
+   {
+    "img": "assets/products/depolama-masa-10.jpg",
+    "w": 155,
+    "h": 280
+   },
+   {
+    "img": "assets/products/depolama-masa-11.jpg",
+    "w": 95,
+    "h": 287
+   },
+   {
+    "img": "assets/products/depolama-masa-12.jpg",
+    "w": 113,
+    "h": 344
+   },
+   {
+    "img": "assets/products/depolama-masa-13.jpg",
+    "w": 147,
+    "h": 221
+   },
+   {
+    "img": "assets/products/depolama-masa-14.jpg",
+    "w": 103,
+    "h": 228
+   },
+   {
+    "img": "assets/products/depolama-masa-15.jpg",
+    "w": 237,
+    "h": 320
+   },
+   {
+    "img": "assets/products/depolama-masa-16.jpg",
+    "w": 191,
+    "h": 322
+   },
+   {
+    "img": "assets/products/depolama-masa-17.jpg",
+    "w": 374,
+    "h": 247
+   }
+  ]
+ },
+ {
+  "id": "lounge",
+  "tr": "Lounge Koltuklar",
+  "en": "Lounge Armchairs",
+  "page": 6,
+  "items": [
+   {
+    "img": "assets/products/lounge-01.jpg",
+    "w": 240,
+    "h": 324
+   },
+   {
+    "img": "assets/products/lounge-02.jpg",
+    "w": 229,
+    "h": 320
+   },
+   {
+    "img": "assets/products/lounge-03.jpg",
+    "w": 287,
+    "h": 341
+   },
+   {
+    "img": "assets/products/lounge-04.jpg",
+    "w": 260,
+    "h": 321
+   },
+   {
+    "img": "assets/products/lounge-05.jpg",
+    "w": 251,
+    "h": 301
+   },
+   {
+    "img": "assets/products/lounge-06.jpg",
+    "w": 262,
+    "h": 320
+   },
+   {
+    "img": "assets/products/lounge-07.jpg",
+    "w": 257,
+    "h": 308
+   },
+   {
+    "img": "assets/products/lounge-08.jpg",
+    "w": 250,
+    "h": 318
+   },
+   {
+    "img": "assets/products/lounge-09.jpg",
+    "w": 237,
+    "h": 321
+   },
+   {
+    "img": "assets/products/lounge-10.jpg",
+    "w": 251,
+    "h": 334
+   },
+   {
+    "img": "assets/products/lounge-11.jpg",
+    "w": 252,
+    "h": 340
+   }
+  ]
+ },
+ {
+  "id": "kanepe-puf",
+  "tr": "Kanepe, Puf & Modüler",
+  "en": "Sofas, Poufs & Modular",
+  "page": 7,
+  "items": [
+   {
+    "img": "assets/products/kanepe-puf-01.jpg",
+    "w": 472,
+    "h": 228
+   },
+   {
+    "img": "assets/products/kanepe-puf-02.jpg",
+    "w": 465,
+    "h": 212
+   },
+   {
+    "img": "assets/products/kanepe-puf-03.jpg",
+    "w": 370,
+    "h": 284
+   },
+   {
+    "img": "assets/products/kanepe-puf-04.jpg",
+    "w": 417,
+    "h": 242
+   },
+   {
+    "img": "assets/products/kanepe-puf-05.jpg",
+    "w": 464,
+    "h": 226
+   },
+   {
+    "img": "assets/products/kanepe-puf-06.jpg",
+    "w": 321,
+    "h": 340
+   },
+   {
+    "img": "assets/products/kanepe-puf-07.jpg",
+    "w": 337,
+    "h": 325
+   },
+   {
+    "img": "assets/products/kanepe-puf-08.jpg",
+    "w": 292,
+    "h": 283
+   },
+   {
+    "img": "assets/products/kanepe-puf-09.jpg",
+    "w": 377,
+    "h": 275
+   },
+   {
+    "img": "assets/products/kanepe-puf-10.jpg",
+    "w": 322,
+    "h": 253
+   },
+   {
+    "img": "assets/products/kanepe-puf-11.jpg",
+    "w": 330,
+    "h": 244
+   },
+   {
+    "img": "assets/products/kanepe-puf-12.jpg",
+    "w": 287,
+    "h": 242
+   },
+   {
+    "img": "assets/products/kanepe-puf-13.jpg",
+    "w": 418,
+    "h": 221
+   },
+   {
+    "img": "assets/products/kanepe-puf-14.jpg",
+    "w": 405,
+    "h": 214
+   },
+   {
+    "img": "assets/products/kanepe-puf-15.jpg",
+    "w": 354,
+    "h": 204
+   },
+   {
+    "img": "assets/products/kanepe-puf-16.jpg",
+    "w": 466,
+    "h": 194
+   },
+   {
+    "img": "assets/products/kanepe-puf-17.jpg",
+    "w": 167,
+    "h": 172
+   }
+  ]
+ }
+]
