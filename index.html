@@ -33,10 +33,9 @@ img{display:block;max-width:100%}
 header{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .4s var(--ease),box-shadow .4s,border-color .4s}
 header.scrolled{background:rgba(247,242,234,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand img{width:50px;height:50px}
-.brand .bt b{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.02em;line-height:1;display:block}
-.brand .bt span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.brand{display:flex;align-items:center}
+.brand img{width:70px;height:70px;transition:transform .3s var(--ease)}
+.brand img:hover{transform:scale(1.04)}
 .nav-right{display:flex;align-items:center;gap:clamp(16px,3vw,32px)}
 .nav-links{display:flex;gap:clamp(16px,2.5vw,30px)}
 .nav-links a{font-size:15px;font-weight:500;color:var(--muted);transition:color .25s}
@@ -87,6 +86,7 @@ header.scrolled{background:rgba(247,242,234,.86);backdrop-filter:blur(14px);bord
 .cat-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,2.8vw,2.2rem);letter-spacing:-.01em;line-height:1.1}
 .cat-head .cnt{font-size:13px;font-weight:600;color:var(--muted-2);letter-spacing:.04em;white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:clamp(12px,1.5vw,20px)}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 .pcard{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(36,31,27,.4);border-color:var(--line-2)}
 .pcard .ph{aspect-ratio:1/1;display:grid;place-items:center;padding:14px;background:
@@ -158,13 +158,11 @@ footer{border-top:1px solid rgba(255,255,255,.1)}
   <div class="wrap nav">
     <a class="brand" href="#top">
       <img src="assets/rotalogo.png" alt="Rota" />
-      <span class="bt"><b>ROTA</b><span>Merchandising · Marketing · Design</span></span>
     </a>
     <div class="nav-right">
       <nav class="nav-links">
-        <a href="#products" data-i18n="nav_products">Ürünler</a>
-        <a href="#catalog" data-i18n="nav_catalog">Katalog</a>
-        <a href="#contact" data-i18n="nav_contact">İletişim</a>
+        <a href="#products" data-i18n="nav_furniture">Mobilya</a>
+        <a href="#av" data-i18n="nav_av">A/V</a>
       </nav>
       <div class="lang" role="group" aria-label="Language">
         <button data-lang="tr" class="active">TR</button>
@@ -260,7 +258,7 @@ footer{border-top:1px solid rgba(255,255,255,.1)}
     </div>
   </div>
   <footer><div class="wrap foot">
-    <a class="brand" href="#top"><img src="assets/rotalogo.png" alt="" style="width:34px;height:34px"/><span class="bt"><b>ROTA</b><span>Merchandising · Marketing · Design</span></span></a>
+    <a class="brand" href="#top"><img src="assets/rotalogo.png" alt="Rota" style="width:44px;height:44px"/></a>
     <div>© 2025 Rota · <span data-i18n="rights">Tüm hakları saklıdır.</span></div>
   </div></footer>
 </section>
@@ -274,7 +272,7 @@ footer{border-top:1px solid rgba(255,255,255,.1)}
 
 <script>
 const I18N={
- tr:{nav_products:"Ürünler",nav_catalog:"Katalog",nav_contact:"İletişim",
+ tr:{nav_furniture:"Mobilya",nav_av:"A/V",nav_products:"Ürünler",nav_catalog:"Katalog",nav_contact:"İletişim",
    hero_kick:"Furniture Catalog · 2025",hero_title:'Mekânlara <em>karakter</em> katan mobilyalar.',
    hero_sub:"Ofis koltuklarından kanepelere, bar taburesinden depolama çözümlerine — Rota Furniture koleksiyonunu keşfedin.",
    hero_cta1:"Ürünleri Keşfet",hero_cta2:"Kataloğu İndir",
@@ -289,7 +287,7 @@ const I18N={
    c_desc:"Mobilya, merchandising, marketing ve tasarım çözümleri için bize ulaşın.",
    c_web:"Web",c_cat:"Katalog",c_cat_val:"Furniture Catalog — PDF",rights:"Tüm hakları saklıdır.",
    page:"Sayfa",product:"ürün"},
- en:{nav_products:"Products",nav_catalog:"Catalog",nav_contact:"Contact",
+ en:{nav_furniture:"Furniture",nav_av:"A/V",nav_products:"Products",nav_catalog:"Catalog",nav_contact:"Contact",
    hero_kick:"Furniture Catalog · 2025",hero_title:'Furniture that gives spaces <em>character</em>.',
    hero_sub:"From office chairs to sofas, bar stools to storage — explore the Rota Furniture collection.",
    hero_cta1:"Explore Products",hero_cta2:"Download Catalog",
