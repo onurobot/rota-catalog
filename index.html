@@ -362,7 +362,7 @@ function buildAV(){
     const icon=d.lab==='renk'?ICON_VW:ICON_TV;
     return '<div class="avcard"><div class="av-media">'+
       '<div class="av-holder">'+icon+'<span>'+t('img_soon')+'</span></div>'+
-      '<img loading="lazy" src="'+d.img+'" alt="'+d.val+'" onerror="this.remove()">'+
+      '<img loading="lazy" src="'+d.img+'" alt="'+d.val+'" onerror="if(this.src.slice(-4)===\'.jpg\'){this.src=this.src.slice(0,-4)+\'.jpeg\'}else{this.remove()}">'+
       '</div><div class="av-row"><span class="av-lab">'+t(d.lab)+'</span><span class="av-val">'+d.val+'</span></div></div>';
   }).join('');
 }
