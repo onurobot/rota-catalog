@@ -116,6 +116,19 @@ header.scrolled{background:rgba(247,242,234,.86);backdrop-filter:blur(14px);bord
 .av-card .soon{display:inline-block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#ffb3b7;border:1px solid rgba(255,255,255,.2);padding:6px 13px;border-radius:999px}
 .av-card h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin-top:18px;max-width:16ch}
 .av-card p{color:rgba(247,242,234,.72);margin-top:14px;max-width:48ch;position:relative;z-index:1}
+/* A/V display systems table */
+.avgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(12px,1.5vw,20px)}
+@media(max-width:640px){.avgrid{grid-template-columns:repeat(2,1fr);gap:10px}}
+.avcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
+.avcard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(36,31,27,.4);border-color:var(--line-2)}
+.av-media{position:relative;aspect-ratio:4/3;background:radial-gradient(120% 90% at 50% 12%,#fff,var(--surface-2));display:grid;place-items:center;overflow:hidden}
+.av-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px;background:inherit}
+.av-holder{display:grid;justify-items:center;gap:9px;color:var(--muted-2);text-align:center;padding:12px}
+.av-holder svg{width:46px;height:46px;stroke:currentColor;fill:none;stroke-width:1.4}
+.av-holder span{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.av-row{display:flex;border-top:1px solid var(--line)}
+.av-lab{flex:none;width:42%;padding:11px 14px;background:var(--surface-2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--line);display:flex;align-items:center}
+.av-val{flex:1;padding:11px 14px;font-weight:700;font-size:.98rem;display:flex;align-items:center}
 
 /* contact / footer */
 #contact{background:var(--ink);color:var(--bg)}
@@ -229,13 +242,13 @@ footer{border-top:1px solid rgba(255,255,255,.1)}
   </div>
 </section>
 
-<section id="av">
+<section id="av" class="section">
   <div class="wrap">
-    <div class="av-card">
-      <span class="soon" data-i18n="av_soon">Çok Yakında</span>
-      <h2 data-i18n="av_title">Audio &amp; Visual Kataloğu</h2>
-      <p data-i18n="av_desc">Rota'nın ses ve görüntü çözümleri kataloğu yakında burada. Yeni koleksiyon için takipte kalın.</p>
+    <div class="cat-lead">
+      <span class="eyebrow" data-i18n="av_kick">A / V</span>
+      <h2 data-i18n="av_title2">Görüntü Sistemleri</h2>
     </div>
+    <div class="avgrid" id="avgrid"></div>
   </div>
 </section>
 
@@ -272,7 +285,7 @@ footer{border-top:1px solid rgba(255,255,255,.1)}
 
 <script>
 const I18N={
- tr:{nav_furniture:"Mobilya",nav_av:"A/V",nav_products:"Ürünler",nav_catalog:"Katalog",nav_contact:"İletişim",
+ tr:{nav_furniture:"Mobilya",nav_av:"A/V",boyut:"Boyut",renk:"Renk",av_kick:"A / V",av_title2:"Görüntü Sistemleri",img_soon:"Görsel yakında",nav_products:"Ürünler",nav_catalog:"Katalog",nav_contact:"İletişim",
    hero_kick:"Furniture Catalog · 2025",hero_title:'Mekânlara <em>karakter</em> katan mobilyalar.',
    hero_sub:"Ofis koltuklarından kanepelere, bar taburesinden depolama çözümlerine — Rota Furniture koleksiyonunu keşfedin.",
    hero_cta1:"Ürünleri Keşfet",hero_cta2:"Kataloğu İndir",
@@ -287,7 +300,7 @@ const I18N={
    c_desc:"Mobilya, merchandising, marketing ve tasarım çözümleri için bize ulaşın.",
    c_web:"Web",c_cat:"Katalog",c_cat_val:"Furniture Catalog — PDF",rights:"Tüm hakları saklıdır.",
    page:"Sayfa",product:"ürün"},
- en:{nav_furniture:"Furniture",nav_av:"A/V",nav_products:"Products",nav_catalog:"Catalog",nav_contact:"Contact",
+ en:{nav_furniture:"Furniture",nav_av:"A/V",boyut:"Size",renk:"Color",av_kick:"A / V",av_title2:"Display Systems",img_soon:"Image soon",nav_products:"Products",nav_catalog:"Catalog",nav_contact:"Contact",
    hero_kick:"Furniture Catalog · 2025",hero_title:'Furniture that gives spaces <em>character</em>.',
    hero_sub:"From office chairs to sofas, bar stools to storage — explore the Rota Furniture collection.",
    hero_cta1:"Explore Products",hero_cta2:"Download Catalog",
@@ -328,6 +341,31 @@ function buildPages(){
   for(let n=1;n<=7;n++) h+='<div class="pagethumb" data-page="'+n+'"><img loading="lazy" src="assets/pages/p'+n+'.jpg" alt="'+t('page')+' '+n+'"><span>'+t('page')+' '+n+'</span></div>';
   el.innerHTML=h;
 }
+
+/* A/V — Görüntü Sistemleri (görseller sonra assets/av/ içine eklenecek) */
+const AV=[
+ {lab:'boyut', val:'32"',  img:'assets/av/av-32.jpg'},
+ {lab:'boyut', val:'42"',  img:'assets/av/av-42.jpg'},
+ {lab:'boyut', val:'50"',  img:'assets/av/av-50.jpg'},
+ {lab:'boyut', val:'55"',  img:'assets/av/av-55.jpg'},
+ {lab:'boyut', val:'60"',  img:'assets/av/av-60.jpg'},
+ {lab:'boyut', val:'70"',  img:'assets/av/av-70.jpg'},
+ {lab:'renk',  val:'2*2 Video Wall', img:'assets/av/av-vw-2x2.jpg'},
+ {lab:'renk',  val:'2*3 Video Wall', img:'assets/av/av-vw-2x3.jpg'},
+ {lab:'renk',  val:'3*3 Video Wall', img:'assets/av/av-vw-3x3.jpg'},
+];
+const ICON_TV='<svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>';
+const ICON_VW='<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>';
+function buildAV(){
+  const el=document.getElementById('avgrid'); if(!el)return;
+  el.innerHTML=AV.map(d=>{
+    const icon=d.lab==='renk'?ICON_VW:ICON_TV;
+    return '<div class="avcard"><div class="av-media">'+
+      '<div class="av-holder">'+icon+'<span>'+t('img_soon')+'</span></div>'+
+      '<img loading="lazy" src="'+d.img+'" alt="'+d.val+'" onerror="this.remove()">'+
+      '</div><div class="av-row"><span class="av-lab">'+t(d.lab)+'</span><span class="av-val">'+d.val+'</span></div></div>';
+  }).join('');
+}
 function applyFilter(){
   document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.f===curFilter));
   document.querySelectorAll('.cat').forEach(s=>s.style.display=(curFilter==='all'||s.dataset.id===curFilter)?'':'none');
@@ -336,6 +374,7 @@ function applyLang(){
   document.documentElement.lang=lang; const d=I18N[lang];
   document.querySelectorAll('[data-i18n]').forEach(e=>{if(d[e.dataset.i18n]!=null)e.innerHTML=d[e.dataset.i18n]});
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  buildAV();
   if(DATA.length){buildFilters();buildSections();buildPages();applyFilter();}
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem('rota-lang',lang);applyLang()}));
